@@ -8,9 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1">
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" Width="799"/>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800"/>
         </Border>
-        <DataGrid x:Name="WorkoutGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="30,81,24,53" SelectionMode="Single" SelectionChanged="WorkoutGrid_SelectionChanged">
+        <TextBlock Text="Your latest workouts" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40" Height="40" FontSize="25" FontWeight="Bold"/>
+        <DataGrid x:Name="WorkoutGrid" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Center" VerticalAlignment="Center" Width="780" Height="290" Margin="0,30,0,0"  SelectionMode="Single" SelectionChanged="WorkoutGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Workout Name" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Start" Binding="{Binding Start}" Width="*"/>
@@ -19,7 +20,7 @@
                 <DataGridTextColumn Header="Action" Binding="{Binding Action}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="ViewWorkoutButton" Content="VIEW WORKOUT" Height="30" Width="100"
-                Margin="566,386,134,18" Click="ViewWorkoutButton_Click" IsEnabled="False"/>
+        <Button x:Name="ViewWorkoutButton" Content="VIEW WORKOUT" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="30" Width="100"
+                Margin="10,10,130,10" Click="ViewWorkoutButton_Click" IsEnabled="False"/>
     </Grid>
 </Window>

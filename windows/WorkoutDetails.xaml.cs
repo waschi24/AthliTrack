@@ -25,5 +25,17 @@ namespace AthliTrack.windows
             InitializeComponent();
             ExerciseGrid.ItemsSource = workout.Exercises;
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new MainWindow
+            {
+                Left = this.Left,
+                Top = this.Top
+            };
+
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }
