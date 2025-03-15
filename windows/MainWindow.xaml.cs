@@ -38,6 +38,16 @@ public partial class MainWindow : Window
 
     private void ViewWorkoutButton_Click(object sender, RoutedEventArgs e)
     {
+        moveToDetails();
+    }
+
+    private void WorkoutGrid_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        moveToDetails();
+    }
+
+    private void moveToDetails()
+    {
         if (_selectedWorkout != null)
         {
             // Position des aktuellen Fensters speichern
@@ -65,9 +75,9 @@ public partial class MainWindow : Window
             new Workout
             {
                 Name = "Strength Training",
-                Start = DateTime.Now.AddHours(-1),
+                Start = DateTime.Now.AddHours(-1).AddMinutes(-7),
                 End = DateTime.Now,
-                Action = "Completed",
+                Action = "DELETE",
                 Exercises = new List<Exercise>
                 {
                     new Exercise

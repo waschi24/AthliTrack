@@ -7,11 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="800"/>
-        </Border>
+        <Separator VerticalAlignment="Top" Margin="0,29,0,0"/>
         <TextBlock Text="Your latest workouts" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40" Height="40" FontSize="25" FontWeight="Bold"/>
-        <DataGrid x:Name="WorkoutGrid" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Center" VerticalAlignment="Center" Width="780" Height="290" Margin="0,30,0,0"  SelectionMode="Single" SelectionChanged="WorkoutGrid_SelectionChanged">
+        <DataGrid x:Name="WorkoutGrid" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Center" VerticalAlignment="Center" Width="780" Height="290" Margin="0,30,0,0"  SelectionMode="Single" SelectionChanged="WorkoutGrid_SelectionChanged" MouseDoubleClick="WorkoutGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Workout Name" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Start" Binding="{Binding Start}" Width="*"/>
