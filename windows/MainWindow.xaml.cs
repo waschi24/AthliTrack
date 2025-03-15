@@ -25,23 +25,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        Workouts = new ObservableCollection<Workout>
-        {
-            new Workout { Name = "Cardio", Start = DateTime.Now.AddMinutes(-30), End = DateTime.Now, Action = "Completed",
-                Exercises = new List<Exercise>
-                {
-                    new Exercise { Name = "Jump Rope", Sets = 3, Reps = 50 },
-                    new Exercise { Name = "Burpees", Sets = 3, Reps = 20 }
-                }
-            },
-            new Workout { Name = "Strength", Start = DateTime.Now.AddHours(-1), End = DateTime.Now.AddMinutes(-30), Action = "Completed",
-                Exercises = new List<Exercise>
-                {
-                    new Exercise { Name = "Bench Press", Sets = 4, Reps = 10 },
-                    new Exercise { Name = "Squats", Sets = 4, Reps = 12 }
-                }
-            }
-        };
+        Workouts = createTestWorkout();
 
         WorkoutGrid.ItemsSource = Workouts;
     }
@@ -72,5 +56,42 @@ public partial class MainWindow : Window
             // Altes Fenster schließen
             this.Close();
         }
+    }
+
+    private ObservableCollection<Workout> createTestWorkout()
+    {
+        return new ObservableCollection<Workout>
+        {
+            new Workout
+            {
+                Name = "Strength Training",
+                Start = DateTime.Now.AddHours(-1),
+                End = DateTime.Now,
+                Action = "Completed",
+                Exercises = new List<Exercise>
+                {
+                    new Exercise
+                    {
+                        Name = "Bench Press",
+                        Sets = new List<ExerciseSet>
+                        {
+                            new ExerciseSet { SetId = 1, Weight = 40, Reps = 10 },
+                            new ExerciseSet { SetId = 2, Weight = 35, Reps = 8 },
+                            new ExerciseSet { SetId = 3, Weight = 30, Reps = 6 }
+                        }
+                    },
+                    new Exercise
+                    {
+                        Name = "Squats",
+                        Sets = new List<ExerciseSet>
+                        {
+                            new ExerciseSet { SetId = 1, Weight = 60, Reps = 12 },
+                            new ExerciseSet { SetId = 2, Weight = 55, Reps = 10 },
+                            new ExerciseSet { SetId = 3, Weight = 50, Reps = 8 }
+                        }
+                    }
+                }
+            }
+        };
     }
 }

@@ -7,14 +7,20 @@
         mc:Ignorable="d"
         Title="WorkoutDetails" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="ExerciseGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,45,0,0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Exercise" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Sets" Binding="{Binding Sets}" Width="*"/>
-                <DataGridTextColumn Header="Reps" Binding="{Binding Reps}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="BackButton" Content="Zurück" Grid.Row="1" Height="30" Margin="5" Width="100"
+        <Separator VerticalAlignment="Top" Margin="0,29,0,0"/>
+        <!-- Zurück-Button -->
+        <Button x:Name="BackButton" Content="Back" Grid.Row="1" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"
                 Click="BackButton_Click"/>
+        <TextBlock x:Name="WorkoutDetailsTitle"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0" Height="40" FontSize="25" FontWeight="Bold" />
+        <!-- Scrollbarer Bereich für Übungen -->
+        <ScrollViewer Grid.Row="0" Width="400" HorizontalAlignment="Left" Height="350" VerticalAlignment="Bottom">
+            <StackPanel x:Name="ExerciseList" Orientation="Vertical" Margin="10"/>
+        </ScrollViewer>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 90, 20, 0">
+            <TextBlock Text="Stats" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="20"/>
+            <TextBlock x:Name="WorkoutDetailsVolume" Text="Total Volume: 0kg" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,30,0,0"/>
+            <TextBlock x:Name="WorkoutDetailsSets" Text="Total Sets: 0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,45,0,0"/>
+            <TextBlock x:Name="WorkoutDetailsReps" Text="Total Reps: 0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,60,0,0"/>
+        </Grid>
     </Grid>
 </Window>

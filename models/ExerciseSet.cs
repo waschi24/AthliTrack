@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace AthliTrack.models
 {
-    public class Exercise
+    public class ExerciseSet
     {
-        public string Name { get; set; }
-        public List<ExerciseSet> Sets { get; set; } = new();
+        public int SetId { get; set; }
+        public int Weight { get; set; }
+        public int Reps { get; set; }
     }
 }
